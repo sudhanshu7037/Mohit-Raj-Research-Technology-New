@@ -65,8 +65,20 @@ const Navbar = () => {
   "Remote Infrastructure Facility"
 ],
 
-      Solutions: ["Solution 1", "Solution 2", "Solution 3", "Solution 4"],
-      Industries: ["Industry 1", "Industry 2", "Industry 3", "Industry 4"]
+      Solutions: [
+  "Enterprise Resource Planning (ERP)",
+  "Customer Relationship Management (CRM)",
+  "Cloud Computing Solutions",
+  "Mobile App Development",
+  "Artificial Intelligence Solutions",
+  "Business Intelligence & Analytics",
+  "Custom Software Solutions",
+  "Blockchain Development",
+  "IoT-Based Automation",
+  "E-Commerce Solutions",
+  "Healthcare IT Solutions"
+],
+      Industries: ["Education ", "Banking ", "Healthcare", "manufacturing","Retail","Life Science","Consumer and goods services"]
     },
     "Who we are": {
       menu: ["Mission", "Vision", "Leadership", "Our Values"],
