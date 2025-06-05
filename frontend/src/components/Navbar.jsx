@@ -81,8 +81,8 @@ const Navbar = () => {
       Industries: ["Education ", "Banking ", "Healthcare", "manufacturing","Retail","Life Science","Consumer and goods services"]
     },
     "Who we are": {
-      menu: ["Mission", "Vision", "Leadership", "Our Values"],
-      heading: "Driven by purpose, powered by people.",
+      menu: ["Overview", "About Us", "Reasearch & Innovation", "Our Brand"],
+      heading: "We deliver excellence and create values for customers and communities",
       subheading:
         "MRT is committed to transforming lives and communities through technology, innovation, and inclusive progress."
     }
