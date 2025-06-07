@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 import Logo from "../assets/MRTPL-Logo1.png";
 
@@ -19,11 +19,10 @@ const Navbar = () => {
 
   const dropdownContent = {
     "What we do": {
-      menu: ["Overview", "Products and Platforms", "Services", "Solutions", "Industries"],
+      menu: ["Overview", "Products", "Services", "Solutions", "Industries"],
       heading: "MRT is here to make a difference through technology.",
-      subheading:
-        "Leading the way in innovation for over 22 years, we build greater futures for businesses across multiple industries and 55 countries.",
-      "Products and Platforms": [
+      subheading: "Leading the way in innovation for over 22 years...",
+      Products: [
         "University Automation Software",
         "Engineering College Management and Information System",
         "College/Institute Management Systems",
@@ -35,7 +34,7 @@ const Navbar = () => {
         "Medical College Management and Information System",
         "Hospital Management & Information System",
         "E-Hospital Management",
-        "E-Clinic Management",
+        "E-clinic Management",
         "Bioinformatics Management and Information System",
         "E-Company System",
         "E-Business Management",
@@ -49,43 +48,30 @@ const Navbar = () => {
         "E-Banking Management System",
         "Police Management System",
         "E-Govt. Office Management System",
-        "Credit Cooperative Society Management Information System"
+        "Credit Cooperative Society Management Information System",
       ],
-      Services: [
-  "Software Development",
-  "Development, Hosting & Promotion of Websites",
-  "Hardware & Networking Management Solutions",
-  "Multimedia & Animation Solutions",
-  "Digital Marketing",
-  "Data Centers Development Facility",
-  "E-Learning",
-  "Video Conferencing",
-  "Security & Surveillances Solutions",
-  "Data Digitization Services",
-  "Remote Infrastructure Facility"
-],
 
-      Solutions: [
-  "Enterprise Resource Planning (ERP)",
-  "Customer Relationship Management (CRM)",
-  "Cloud Computing Solutions",
-  "Mobile App Development",
-  "Artificial Intelligence Solutions",
-  "Business Intelligence & Analytics",
-  "Custom Software Solutions",
-  "Blockchain Development",
-  "IoT-Based Automation",
-  "E-Commerce Solutions",
-  "Healthcare IT Solutions"
-],
-      Industries: ["Education ", "Banking ", "Healthcare", "manufacturing","Retail","Life Science","Consumer and goods services"]
+      Services: [
+        "Software Development",
+        "Development, Hosting & Promotion of Websites",
+        "Hardware & Networking Management Solutions",
+        "Multimedia & Animation Solutions",
+        "Digital Marketing",
+        "Data Centers Development Facility",
+        "E-Learning",
+        "Video Conferencing",
+        "Security & Surveillances Solutions",
+        "Data Digitization Services",
+        "Remote Infrastructure Facility",
+      ],
+      Solutions: ["ERP", "AI", "IoT"],
+      Industries: ["Education", "Healthcare", "Retail"],
     },
     "Who we are": {
-      menu: ["Overview", "About Us", "Reasearch & Innovation", "Our Brand"],
-      heading: "We deliver excellence and create values for customers and communities",
-      subheading:
-        "MRT is committed to transforming lives and communities through technology, innovation, and inclusive progress."
-    }
+      menu: ["Overview", "About Us", "Research & Innovation", "Our Brand"],
+      heading: "We deliver excellence...",
+      subheading: "MRT is committed to transforming lives...",
+    },
   };
 
   const handleDropdown = (title) => {
@@ -100,77 +86,97 @@ const Navbar = () => {
   return (
     <>
       <nav className="bg-black text-white w-full relative z-50">
-        <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-2 flex-shrink-0">
-            <img src={Logo} alt="MRT" className="h-14" />
+        <div className="w-full py-3  px-10 flex items-center justify-between">
+          {/* Logo Section */}
+          <div className="pl-5 pr-2">
+            <img src={Logo} alt="MRT" className="h-12" />
           </div>
 
-          <ul className="hidden md:flex gap-6 text-base font-medium items-center">
-            {navItems.map((item, i) => (
-              <li
-                key={i}
-                className="cursor-pointer flex items-center gap-1 hover:text-gray-300 whitespace-nowrap"
-                onClick={() => handleDropdown(item)}
-              >
-                {item}
-                <FiChevronDown className="text-sm mt-[1px]" />
-              </li>
-            ))}
-            <li className="text-gray-400 hover:text-white whitespace-nowrap">CONTACT US</li>
-            <li className="text-gray-400 hover:text-white whitespace-nowrap">MRT WORLDWIDE</li>
-            <li><FaSearch className="cursor-pointer" /></li>
-            <li><img src="/mrt-icon.svg" alt="MRT" className="h-6" /></li>
-          </ul>
+          {/* Navigation Section */}
+          <div className="flex-1">
+            <div className="max-w-screen-xl mx-auto flex items-center justify-between px-8">
+              {/* Nav Items */}
+              <ul className="hidden md:flex gap-6 text-[18px] font-medium items-center ml-6">
+                {navItems.map((item, i) => (
+                  <li
+                    key={i}
+                    className="cursor-pointer flex items-center gap-1 hover:text-gray-300 whitespace-nowrap"
+                    onClick={() => handleDropdown(item)}
+                  >
+                    {item}
+                    <FiChevronDown className="text-sm mt-[1px]" />
+                  </li>
+                ))}
+                <li className="text-gray-400 hover:text-white whitespace-nowrap">
+                  CONTACT US
+                </li>
+              </ul>
 
-          <div className="md:hidden">
-            <button onClick={() => setMenuOpen(!menuOpen)}>
-              {menuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
-            </button>
+              {/* Mobile Menu Button */}
+              <div className="md:hidden pr-4">
+                <button onClick={() => setMenuOpen(!menuOpen)}>
+                  {menuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
+        {/* Mobile Menu */}
         {menuOpen && (
           <ul className="md:hidden bg-black text-white px-4 py-4 space-y-4 text-base">
             {navItems.map((item, i) => (
-              <li key={i} className="border-b border-gray-700 pb-2">{item}</li>
+              <li key={i} className="border-b border-gray-700 pb-2">
+                {item}
+              </li>
             ))}
             <li>CONTACT US</li>
-            <li>MRT WORLDWIDE</li>
           </ul>
         )}
       </nav>
 
+      {/* Dropdown Content */}
       {activeDropdown && dropdownContent[activeDropdown] && (
-        <div className="absolute top-18 left-0  w-full bg-[#1e1e1e] text-white z-40 shadow-lg transition-all duration-300 ease-in-out h-[80vh] overflow-hidden">
-          <div className="max-w-screen-xl mx-auto px-6 py-8 flex h-full">
+        <div className="absolute top-18 left-0 w-full bg-[#1e1e1e] text-white z-40 shadow-lg transition-all duration-300 ease-in-out h-[80vh] overflow-hidden">
+          <div className="max-w-screen-xl  px-6 py-8 flex h-full mt-4 ml-5 ">
+            {/* Left Menu List */}
             <div className="w-1/3 pr-8 border-r border-gray-600 overflow-y-auto">
               {dropdownContent[activeDropdown].menu.map((menuItem, i) => (
                 <div
                   key={i}
-                  onClick={() => handleSubMenu(menuItem)}
-                  className={`py-3 px-4 text-sm cursor-pointer flex justify-between items-center hover:bg-gray-700 border-b border-gray-700 ${
-                    activeSubMenu === menuItem ? "bg-gray-700 border-l-4 border-white" : ""
+                  onMouseEnter={() => handleSubMenu(menuItem)} // ✅ Changed from onClick
+                  className={`py-3 px-4 text-xl cursor-pointer flex justify-between items-center hover:bg-gray-500 border-b border-gray-700 font-basis text-gray-300 hover:text-white ${
+                    activeSubMenu === menuItem
+                      ? "bg-gray-700 border-l-4 border-white"
+                      : ""
                   }`}
                 >
                   {menuItem}
-                  <FiChevronRight />
+                  <span className="pl-1">
+                    <FiChevronRight />
+                  </span>
                 </div>
               ))}
             </div>
 
-            <div className="w-2/3 pl-8 overflow-y-auto">
+            {/* Right Submenu or Info */}
+            <div className="w-full pl-8 overflow-y-auto mt-4 ">
               {activeSubMenu && dropdownContent["What we do"][activeSubMenu] ? (
                 <>
-                  <h3 className="text-lg font-semibold mb-4">{activeSubMenu}</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pr-4">
-                    {dropdownContent["What we do"][activeSubMenu].map((item, idx) => (
-                      <div
-                        key={idx}
-                        className="text-sm text-gray-300 hover:text-white cursor-pointer"
-                      >
-                        {item}
-                      </div>
-                    ))}
+                  <h3 className="text-lg font-semibold mb-4">
+                    {activeSubMenu}
+                  </h3>
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 pr-6">
+                    {dropdownContent["What we do"][activeSubMenu].map(
+                      (item, idx) => (
+                        <div
+                          key={idx}
+                          className="text-sm text-gray-300 hover:text-white cursor-pointer hover:underline transition-all duration-200"
+                        >
+                          {item}
+                        </div>
+                      )
+                    )}
                   </div>
                 </>
               ) : (
@@ -181,7 +187,7 @@ const Navbar = () => {
                   <p className="text-gray-300 mb-6">
                     {dropdownContent[activeDropdown].subheading}
                   </p>
-                  <button className="px-6 py-2 border border-white rounded-full font-semibold hover:bg-white hover:text-black transition">
+                  <button className="px-6 py-2 border border-white rounded-full font-semibold hover:bg-white hover:text-black transition mt-20">
                     Discover all solutions
                   </button>
                 </>

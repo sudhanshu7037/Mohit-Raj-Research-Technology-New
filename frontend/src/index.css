@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'BasisRegular';
+  src: url('./assets/fonts/BasisGrotesque-Regular-Pro.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'BasisBold';
+  src: url('./assets/fonts/BasisGrotesque-Bold-Pro.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'BasisMedium';
+  src: url('./assets/fonts/BasisGrotesque-Medium-Pro.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'BasisLight';
+  src: url('./assets/fonts/BasisGrotesque-Light-Pro.ttf') format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'HouschkaMedium';
+  src: url('./assets/fonts/HouschkaRoundedAlt-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+
